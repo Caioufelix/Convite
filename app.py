@@ -1,14 +1,52 @@
 import streamlit as st
-st.set_page_config(page_title="Convite Especial 💖")
+import time
 
+# Configuração da página
+st.set_page_config(
+    page_title="Convite Especial 💖",
+    page_icon="❤️",
+    layout="centered"
+)
 
-st.title("😏 Oi gatinho...")
-st.write("✨ Você aceita sair comigo?")
+# Personalizando cores com Markdown e CSS
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #f9e0ee;  /* fundo rosa clarinho */
+    }
+    .big-font {
+        font-size:40px !important;
+        color: #d6336c;
+        text-align: center;
+    }
+    .medium-font {
+        font-size:25px !important;
+        color: #6f2dbd;
+        text-align: center;
+    }
+    </style>
+    """, unsafe_allow_html=True
+)
 
-col1, col2 = st.columns(2)
+# Mensagens principais
+st.markdown('<p class="big-font">😏 Oi gatinho...</p>', unsafe_allow_html=True)
+st.markdown('<p class="medium-font">✨ Você aceita sair comigo?</p>', unsafe_allow_html=True)
 
-if col1.button("Sim 😍"):
-    st.success("Sabia que você ia dizer sim! Vamos ao Dalú 🍖")
+# Botões centralizados
+col1, col2, col3 = st.columns([1,2,1])
+
+if col2.button("Sim 😍"):
+    placeholder = st.empty()
+    for i in range(3):
+        placeholder.markdown(f"⏳ Carregando{'.' * (i+1)}")
+        time.sleep(0.5)
+    placeholder.success("Sabia que você ia dizer sim! Vamos ao Dalú 🍖", icon="🎉")
 
 if col2.button("Não 🥺"):
-    st.error("Tudo bem... mas saiba que perdeu a chance de comer espetinho 🍢")
+    placeholder = st.empty()
+    for i in range(3):
+        placeholder.markdown(f"⏳ Carregando{'.' * (i+1)}")
+        time.sleep(0.5)
+    placeholder.error("Tudo bem... mas saiba que perdeu a chance de comer espetinho 🍢", icon="😢")
+
