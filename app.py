@@ -41,12 +41,12 @@ if col2.button("Sim 😍"):
     for i in range(3):
         placeholder.markdown(f"⏳ Carregando{'.' * (i+1)}")
         time.sleep(0.5)
-    placeholder.success("Sabia que você ia dizer sim! Vamos ao Dalú 🍖", icon="🎉")
+    placeholder.success("Sabia que você ia dizer sim! Vamos ao Dalu 🍖", icon="🎉")
 
 if col2.button("Não 🥺"):
     placeholder = st.empty()
     for i in range(3):
         placeholder.markdown(f"⏳ Carregando{'.' * (i+1)}")
         time.sleep(0.5)
-    placeholder.error("Tudo bem... mas saiba que perdeu a chance de comer espetinho 🍢", icon="😢")
+    placeholder.error("Eu em, se fude lixo", icon="😢")
 
