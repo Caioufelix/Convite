@@ -1,4 +1,6 @@
 import streamlit as st
+st.set_page_config(page_title="Convite Especial 💖")
+
 
 st.title("😏 Oi gatinho...")
 st.write("✨ Você aceita sair comigo?")
